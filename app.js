@@ -18,6 +18,7 @@ function sum(a, b) {
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
+
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -54,16 +55,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  var mySum = a + b + c;
-  var myMultiply = a * b * c;
-  var myMsg1 = a + ' and ' + b + ' and ' + c + ' sum to ' + mySum + '.';
-  var myMsg2 = 'The product of ' + a + ' and ' + b + ' and ' + c  + ' is ' + myMultiply + '.';
+  var mySum1 = sum(a, b);
+  var mySum2 = sum(mySum1[0], c);
+  var myMultiply1 = multiply(a, b);
+  var myMultiply2 = multiply(myMultiply1[0], c);
+  var myMsg1 = a + ' and ' + b + ' and ' + c + ' sum to ' + mySum2[0] + '.';
+  var myMsg2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + myMultiply2[0] + '.';
   console.log(myMsg1, myMsg2);
-  return [mySum, myMultiply, myMsg1, myMsg2];
+  return [mySum2, myMultiply2, myMsg1, myMsg2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
